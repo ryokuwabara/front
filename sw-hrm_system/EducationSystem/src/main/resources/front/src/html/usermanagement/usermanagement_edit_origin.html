@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <title>[[${title}]]</title>
+</head>
+<body>
+    <!--primaryMenu-->
+    <div th:insert="menu::primary-menu"></div>
+
+    <!--secondryMenu-->
+    <div th:insert="menu::secondry-menu"></div>
+
+    <!--main-->
+    <main>
+        <div class="main-edituserData-wrapper">
+            <div class="main-edituserData-container">
+                <h2>ユーザー編集</h2>
+                <form th:action="@{/user-management/update}" th:method="post" th:object = "${userprofile}">
+                    <input type="hidden" th:field="*{id}" readonly/>
+                    <input type="hidden" th:field="*{account}" readonly/>
+                    <div class="main-edituserData-container__table">
+                        <table>
+                            <tr>
+                                <th><label>名前</label></th>
+                                <td><input type="text" th:field="*{profile.name}" required/></td>
+                            </tr>
+                            <tr>
+                                <th><label>ふりがな</label></th>
+                                <td><input type="text" th:field="*{profile.furigana}" required/></td>
+                            </tr>
+                            <tr>
+                                <th><label>入社日</label></th>
+                                <td><input type="text" th:field="*{profile.enter}" placeholder="入力例：2020-01-01" required/></td>
+                            </tr>
+                            <tr>
+                                <th><label>所属</label></th>
+                                <td>
+                                    <select name="profile.unit">
+                                    <option value=CA th:selected="*{profile.unit == 'CA'}">CA</option>
+                                    <option value=BM th:selected="*{profile.unit == 'BM'}">BM</option>
+                                    <option value=ITS th:selected="*{profile.unit == 'ITS'}">ITS</option>
+                                    <option value=BI th:selected="*{profile.unit == 'BI'}">BI</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label>グループ</label></th>
+                                <td><input type="text" th:field="*{profile.superior}" required/></td>
+                            </tr>
+                            <tr>
+                                <th><label>権限</label></th>
+                                <td>
+                                    <select name="role">
+                                        <option value=ADMIN th:selected="*{role == 'ADMIN'}">管理者</option>
+                                        <option value=USER th:selected="*{role == 'USER'}">受講者</option>
+                                        <option value=TUTOR th:selected="*{role == 'TUTOR'}">講師</option>
+                                        <option value=VIEWER th:selected="*{role == 'VIEWER'}">閲覧者</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="main-edituserData-container__button">
+                        <button type="submit">更新</button>
+                        <a th:href="@{/user-management/delete/{id}(id=*{id})}" onclick="return confirm('削除します\nよろしいですか？');">削除</a>
+                        <a href="/user-management/list">キャンセル</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!--footer-->
+    <footer>
+        <div th:insert="menu::footer">
+    </footer>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>

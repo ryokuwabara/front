@@ -1,0 +1,25 @@
+@mixin translate {
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+@mixin text-border-3px {
+    border:none;
+    border-radius:3px;
+}
+
+@mixin text-border-25px {
+    border:none;
+    border-radius:25px;
+}
+
+@mixin placeholder-Round {
+    text-indent: 20px;
+    &::placeholder {
+        color: rgba($color: #dadada, $alpha: 1.0);
+        position: relative;
+            left: 10px;
+        text-indent: 10px;
+    }
+}
