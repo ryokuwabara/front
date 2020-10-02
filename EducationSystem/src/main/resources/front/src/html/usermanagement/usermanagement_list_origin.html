@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <title>[[${title}]]</title>
+</head>
+<body>
+    <!--primaryMenu-->
+    <div th:insert="menu::primary-menu"></div>
+
+    <!--secondryMenu-->
+    <div th:insert="menu::secondry-menu"></div>
+
+    <!--main-->
+    <main>
+        <div class="main-userData-wrapper">
+            <div class="main-userData-container">
+                <h2>ユーザー一覧</h2>
+                    <div class="main-userData-container__filter">
+                        <label>検索：</label>
+                        <input type="text" value="" placeholder="フィルター"/>
+                    </div>
+                    <div class="main-userData-container__newdata">
+                        <a href="/user-management/new">新規作成へ</a>
+                    </div>
+
+                    <div class="main-userData-container__table">
+                        <table id="users">
+                            <thead>
+                                <tr>
+                                    <th>メールアドレス</th>
+                                    <th>名前</th>
+                                    <th>ふりがな</th>
+                                    <th class="sort" data-sort="enter">入社日</th>
+                                    <th class="sort" data-sort="unit">所属</th>
+                                    <th class="sort" data-sort="superior">グループ</th>
+                                    <th class="sort" data-sort="role">権限</th>
+
+                                    <th>編集</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list">
+                                <tr class="table-body" th:each="profile:${profiles}">
+                                    <td class="account" th:text="${profile.account}">
+                                    <td class="name" th:text="${profile.profile.name}">
+                                    <td class="furigana" th:text="${profile.profile.furigana}">
+                                    <td class="enter" th:text="${profile.profile.enter}">
+                                    <td class="unit" th:text="${profile.profile.unit}">
+                                    <td class="superior" th:text="${profile.profile.superior}">
+                                    <td class="role" th:text="${profile.role}">
+
+                                    <td><a th:href="@{/user-management/edit/{id}(id=*{profile.id})}">編集</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </main>
+
+    <!--footer-->
+    <footer>
+        <div th:insert="menu::footer">
+    </footer>
+
+    <script th:src="@{/js/main.js}"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var options = {
+            valueNames: ['enter','unit','superior','role']
+        };
+
+        var userList = new List('users', options);
+        userList.sort('enter', {order : 'desc'})
+
+        $(document).ready(function(){
+
+            $('input').on('keyup', function(){
+                Search($(this).val());
+            });
+
+        });
+
+        function Search(keyword) {
+
+            var regExp = new RegExp(keyword);
+
+            $('#users').find('.table-body').hide().each(function(){
+                var tr = $(this);
+                $(this).find('td').each(function(){
+                    if ($(this).text().match(regExp)) {
+                        tr.show();
+                    }
+                })
+            });
+        }
+
+    </script>
+
+    <style>
+        .sort:after {
+            content: "▽";
+        }
+        .sort.desc:after {
+            content: "▼";
+        }
+        .sort.asc:after {
+            content: "▲";
+        }
+    </style>
+</body>
+</html>
