@@ -60,16 +60,20 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'postcss-loader',
+                        loader: "postcss-loader",
                         options: {
                             sourceMap: true,
-                            plugins: [
-                                require('autoprefixer')({
-                                    grid: true
-                                })
-                            ]
-                        }
-                    },
+                         postcssOptions: {
+                          // PostCSS側でもソースマップを有効にする
+                         
+                          plugins: [
+                            // Autoprefixerを有効化
+                            // ベンダープレフィックスを自動付与する
+                            require("autoprefixer")({ grid: true }),
+                          ],
+                        },
+                        },
+                      },
                     {
                         loader: "sass-loader",
                         options: {

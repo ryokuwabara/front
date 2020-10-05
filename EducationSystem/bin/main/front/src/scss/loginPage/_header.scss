@@ -8,21 +8,15 @@ header {
         width: auto;
         &__logo {
             &-img {
-                height: auto;
-                    max-height: 48px;
+                height: 120px;
+                    max-height: 120px;
                     min-height: 50%;
                 position: absolute;
                 bottom: 5px;
                     left: 1vh;
-                width: auto;
+                width: 560px;
             }
         }
-        &__underline {
-            &-img {
-                position: absolute;
-                    bottom: 0;
-                width: 100%;
-            }
-        }
+     
     }
 }

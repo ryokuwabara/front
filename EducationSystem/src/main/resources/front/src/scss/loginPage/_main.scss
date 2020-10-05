@@ -2,85 +2,86 @@ main {
     .main-container {
         &__loginform {
             background-color: rgba($color: #ffffff, $alpha: 0.6);
-            height: 550px;
-           margin:220px  640px;           
-            width: 360px;
+            height: 640px;
+            margin-top: 22vh;
+            position: absolute;
+                left: 50%;
+                top: 27vh;
+            width: 640px;
             @include text-border-3px;
             @include translate;
             &-logo {
-                margin:40px;
+                position: absolute;
+                    left: 50%;
+                    top: 90px;
                 @include translate;
                 &-img {
                     height: 120px;
-                    max-height: 60px;
+                        max-height: 60px;
                     width: 560px;
                 }
             }
             &-error {
                 position: absolute;
-                    top: 60%;
-                    left: 12%;
+                    top: 165px;
+                    left: 40px;
                 p {
-                    font-size: small;
+                    font-size: 16px; 
+                    font-family: Meiryo;
                     color: red;
                     font-weight: bold;
                 }
             }
             &-username {
                 p {
-                    font-size: 85%;
-                   margin: 196px 40px 420px 516px;
-                   width: 85px;
-                   height: 24px;
-                   font-family: Meiryo;
-                   font-size: 16px;
-                   font-weight: bold;
-                   font-stretch: normal;
-                   font-style: normal;
-                   line-height: 1.5;
-                   letter-spacing: normal;
-                   text-align: left;
-                   color: #707070;
+                    font-size: medium;
+                    position: absolute;
+                        left: 7%;
+                        top: 231px;
+                     color: #707070;
                     }
                 &-input {
                     color: rgba($color: #464646, $alpha: 1.0);
                     font-size: 110%;
-                    margin: 231px 40px 377px 40px;
-                        width: 560px;
-                        height: 32px;
-                        border-radius: 4px;
-                        background-color: #ffffff;
+                    height: 28px;
+                    position: absolute;
+                        left: 50%;
+                        top: 267px;
+                    width: 85%;
                     @include text-border-3px;
                     @include translate;
                 }
             }
             &-password {
                 p {
-                    font-size: 85%;
-                    margin: 295px 40px 321px 520px;
+                    font-size: medium;
+                    position: absolute;
+                        left: 7%;
+                        top: 331px;
+                    color: #707070;
                 }
                 &-input {
                     font-size: 110%;
-                    width: 560px;
-                    height: 32px;
-                    border-radius: 4px;
-                    background-color: #ffffff;
-                    margin: 329px 40px 279px 40px;
+                    height: 28px;
+                    position: absolute;
+                        left: 50%;
+                        top: 367px;
+                    width: 85%;
                     @include text-border-3px;
                     @include translate;
                 }
             }
             &-forgot {
                 position: absolute;
-                    left: 60%;
-                    bottom: 80px;
+                    left: 70%;
+                    bottom: 60px;
                 &-a {
                     color: rgba($color: #423aad, $alpha: 1.0);
                     font-size: 85%;
                     text-decoration: none;
                 }
                 :hover {
-                    color: rgba($color: #e6d7d7, $alpha: 1.0);
+                    color: rgba($color: #1101f5, $alpha: 1.0);
                 }
             }
             &-submit {
@@ -90,18 +91,17 @@ main {
                     cursor : pointer;
                     color: #ffffff;
                     font-size: 110%;
-                    height: 42px;
+                    height: 40px;
                     position: absolute;
                         left: 50%;
-                        top: 375px;
+                        top: 475px;
                     width: 80%;
                     @include button-hover--flortUp;
                     @include text-border-25px;
                     @include translate;
                 }
                 :focus {
-                    outline: solid ;
-                    background-color: #E6FFE9;
+                    outline: 0;
                 }
                 :active {
                     background-color:#69c;
@@ -120,17 +120,14 @@ main {
                 }
             }
             &-check {
-                width: 20px;
-                height: 20px;
-                margin: 377px 40px 580px 243px;
-                border-radius: 4px;
-                border: solid 1px #707070;
-                background-color: #ffffff;
+                position: absolute;
+                    top: 416px;
+                    left: 10%;
                 input {
-                    size: 3px;
+                    size: 15px;
                 }
                 label {
-                    font-size: x-small;
+                    font-size: medium;
                 }
             }
         }
