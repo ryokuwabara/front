@@ -1,6 +1,6 @@
 const path = require('path');
-const MODE = process.env.NODE_ENV;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MODE = process.env.NODE_ENV;
 const enabledSourceMap = MODE === "development";
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
@@ -38,7 +38,7 @@ const imgLoader = enabledSourceMap ? urlLoader : fileLoader
 
 module.exports = {
     mode: MODE,
-    entry: '/src/main/resources/front/src/js/index.js',
+    entry: './src/main/resources/front/src/js/index.js',
 
     output: {
         path: path.join(__dirname, '/src/main/resources/static/'),
@@ -50,7 +50,6 @@ module.exports = {
             {
                 test:/\.(sa|sc|c)ss$/,
                 use: [
-              
                     enabledSourceMap ? "style-loader" : MiniCssExtractPlugin.loader,
                     {
                         loader: "css-loader",
@@ -103,127 +102,103 @@ module.exports = {
             template: './src/main/resources/front/src/html/login_origin.html',
             filename: '../templates/login.html'
         }),
+
         //admin.html
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/admin_origin.html',
+            template: './src/main/resources/front/src/html/admin/admin_origin.html',
             filename: '../templates/admin.html'
         }),
         //index.html
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/index_origin.html',
+            template: './src/main/resources/front/src/html/index/index_origin.html',
             filename: '../templates/index.html'
         }),
         //tutor.html
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/tutor_origin.html',
+            template: './src/main/resources/front/src/html/tutor/tutor_origin.html',
             filename: '../templates/tutor.html'
         }),
         //viewer.html
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/viewer_origin.html',
+            template: './src/main/resources/front/src/html/viewer/viewer_origin.html',
             filename: '../templates/viewer.html'
         }),
-        //userData.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/userData_origin.html',
-            filename: '../templates/userData.html'
-        }),
-        //admin/profile/user.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/admin_user_origin.html',
-            filename: '../templates/admin/profile/user.html'
-        }),
-        //admin/profile/edit.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/admin_edit_origin.html',
-            filename: '../templates/admin/profile/edit.html'
-        }),
-        //index/profile/user.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/index_user_origin.html',
-            filename: '../templates/index/profile/user.html'
-        }),
-        //index/profile/edit.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/index_edit_origin.html',
-            filename: '../templates/index/profile/edit.html'
-        }),
-        //tutor/profile/user.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/tutor_user_origin.html',
-            filename: '../templates/tutor/profile/user.html'
-        }),
-        //tutor/profile/edit.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/tutor_edit_origin.html',
-            filename: '../templates/tutor/profile/edit.html'
-        }),
-        //viewer/profile/user.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/viewer_user_origin.html',
-            filename: '../templates/viewer/profile/user.html'
-        }),
-        //viewer/profile/edit.html
-        new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/viewer_edit_origin.html',
-            filename: '../templates/viewer/profile/edit.html'
-        }),
+
         //user-management/edit.html
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/usermanagement_edit_origin.html',
+            template: './src/main/resources/front/src/html/usermanagement/usermanagement_edit_origin.html',
             filename: '../templates/user-management/edit.html'
         }),
         //user-management/list.html
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/usermanagement_list_origin.html',
+            template: './src/main/resources/front/src/html/usermanagement/usermanagement_list_origin.html',
             filename: '../templates/user-management/list.html'
         }),
         //user-management/new.html
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/usermanagement_new_origin.html',
+            template: './src/main/resources/front/src/html/usermanagement/usermanagement_new_origin.html',
             filename: '../templates/user-management/new.html'
         }),
+
         //samplepage(admin)
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/admin_sample1_origin.html',
+            template: './src/main/resources/front/src/html/admin/admin_sample1_origin.html',
             filename: '../templates/admin/sample1.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/admin_sample2_origin.html',
+            template: './src/main/resources/front/src/html/admin/admin_sample2_origin.html',
             filename: '../templates/admin/sample2.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/admin_sample3_origin.html',
+            template: './src/main/resources/front/src/html/admin/admin_sample3_origin.html',
             filename: '../templates/admin/sample3.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/admin_sample4_origin.html',
+            template: './src/main/resources/front/src/html/admin/admin_sample4_origin.html',
             filename: '../templates/admin/sample4.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/admin_sample5_origin.html',
+            template: './src/main/resources/front/src/html/admin/admin_sample5_origin.html',
             filename: '../templates/admin/sample5.html'
         }),
+
         //samplepage(index)
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/index_sample1_origin.html',
+            template: './src/main/resources/front/src/html/index/index_sample1_origin.html',
             filename: '../templates/index/sample1.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/index_sample2_origin.html',
+            template: './src/main/resources/front/src/html/index/index_sample2_origin.html',
             filename: '../templates/index/sample2.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/index_sample3_origin.html',
+            template: './src/main/resources/front/src/html/index/index_sample3_origin.html',
             filename: '../templates/index/sample3.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/index_sample4_origin.html',
+            template: './src/main/resources/front/src/html/index/index_sample4_origin.html',
             filename: '../templates/index/sample4.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/main/resources/front/src/html/index_sample5_origin.html',
+            template: './src/main/resources/front/src/html/index/index_sample5_origin.html',
             filename: '../templates/index/sample5.html'
+        }),
+
+        //profile/user.html
+        new HtmlWebpackPlugin({
+            template: './src/main/resources/front/src/html/profile/user.html',
+            filename: '../templates/profile/user.html'
+        }),
+        //profile/edit.html
+        new HtmlWebpackPlugin({
+            template: './src/main/resources/front/src/html/profile/edit.html',
+            filename: '../templates/profile/edit.html'
+        }),
+
+        //menu.html
+        new HtmlWebpackPlugin({
+            template: './src/main/resources/front/src/html/menu_origin.html',
+            filename: '../templates/menu.html'
         }),
 
         new MiniCssExtractPlugin({
@@ -233,17 +208,18 @@ module.exports = {
             $: 'jquery'
         }),
     ],
+
     devServer: {
-        contentBase: path.join(__dirname, '/src/main/resources/static/'),
+        contentBase: path.join(__dirname, 'dist'),
         publicPath: '/',
         watchContentBase: true,
         port: 3000,
         inline: true,
         hot: true,
     },
-        
+
     resolve: {
         modules: ['node_modules'],
-        extensions: ['.js'],   
+        extensions: ['.js'],
     },
 };
