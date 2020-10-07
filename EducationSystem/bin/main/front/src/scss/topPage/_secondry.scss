@@ -1,10 +1,10 @@
 .secondry-wrapper {
     .secondry-container {
         &__navi {
-            background-color: rgba($color: #29292b, $alpha: 1.0);
+            background-color: rgba($color: #29292b, $alpha: 1);
             height: 36px;
             position: absolute;
-                top: 0;
+            top: 0;
             width: 100%;
             z-index: 1;
             &-ul {
@@ -12,8 +12,9 @@
                     right: 0;
                     top: 12px;
                 list-style: none;
-                a{
+                a{                  
                     color: rgba($color: #ffffff, $alpha: 1.0);
+                    display: block;
                 }
                 li {
                     text-align: right;
@@ -21,18 +22,19 @@
                     a {
                         text-decoration: none;
                     }
+              
                 }
                 &-2 {
-                    background-color: rgba($color: #29292b, $alpha: 1.0);
+                    background-color: rgba($color: #29292b, $alpha: 1);
                     display: none;
                     margin: 0;
-                    li{
+                    li {
                         list-style: none;
                     }
 
-                    input{
-                        background-color: rgba($color: #29292b, $alpha: 1.0);
-                        color: rgba($color: #ffffff, $alpha: 1.0);
+                    input {
+                        background-color: rgba($color: #29292b, $alpha: 1);
+                        color: rgba($color: #ffffff, $alpha: 1);
                         border-style: none;
                         list-style: none;
                         font-size: medium;

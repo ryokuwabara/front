@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <title>[[${title}]]</title>
 </head>
+
 <body>
     <!--main-->
     <main>
@@ -21,14 +23,15 @@
                     <div class="main-container__loginform-error" th:if="${iserror}">
                         <p>メールアドレスかパスワードが間違っています</p>
                     </div>
-                    
+
 
                     <!--main logo End-->
                     <!--input id-->
                     <div class="main-container__loginform-username">
                         <p class="main-container__loginForm-username-p">ユーザーID</p>
                         <label>
-                            <input class="main-container__loginform-username-input" id="username" type="text" name="username"　placeholder="sample@skywill.jp">
+                            <input class="main-container__loginform-username-input" id="username" type="text"
+                                name="username" 　placeholder="&ensp;sample@skywill.jp">
                         </label>
                     </div>
                     <!--input id End-->
@@ -36,7 +39,8 @@
                     <div class="main-container__loginform-password">
                         <p>パスワード</p>
                         <label for="userName">
-                            <input class="main-container__loginform-password-input" type="password" name="password" id="password">
+                            <input class="main-container__loginform-password-input" type="password" name="password"
+                                id="password">
                         </label>
                     </div>
                     <div class="main-container__loginform-check">
@@ -59,10 +63,11 @@
                     </div>
                     <!--submit End-->
                     <div class="main-container__loginform-line">
-                        <img class="main-container__loginform-line-img" src="../../img/login_background-line.jpg" alt="">
+                        <img class="main-container__loginform-line-img" src="../../img/login_background-line.jpg"
+                            alt="">
                     </div>
 
-                    
+
                 </div>
             </div>
         </form>
@@ -71,4 +76,5 @@
     <!--main End-->
     <script th:src="@{/js/main.js}"></script>
 </body>
+
 </html>
