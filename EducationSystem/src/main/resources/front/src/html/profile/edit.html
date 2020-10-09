@@ -17,58 +17,60 @@
     <main>
         <div class="main-editprofile-wrapper">
             <div class="main-editprofile-container">
-            <table>
-                <tr th:if="${validationError}" th:each="error : ${validationError}">
-                    <td style="color:red;" th:text="${error}"></td>
-                </tr>
-            </table>
+                <table>
+                    <tr th:if="${validationError}" th:each="error : ${validationError}">
+                        <td style="color:red;" th:text="${error}"></td>
+                    </tr>
+                </table>
 
-            <h2>ユーザー編集</h2>
-            <form th:action="@{/profile/update/{id}(id=*{id})}" th:object="${userUpdateRequest}" th:method="post">
-                <input type="hidden" th:field="*{id}" />
-                <input type="hidden" th:field="*{profileimage}">
+                <h2>ユーザー編集</h2>
 
-                <div class="main-editprofile-container__profileimage">
-                    <form>
-                    <input id="file" name="file" type="file" />
-                    </form>
+                <div class="main-editprofile-container__profimage">
+                    <img th:src="|/img/profile/${image}|" />
                 </div>
+                <form th:action="@{/profile/update/{id}(id=*{id})}" th:object="${userUpdateRequest}" th:method="post" enctype="multipart/form-data">
+                    <input type="hidden" th:field="*{id}" />
+                    <input type="hidden" th:field="*{profileimage}" />
 
-                <div class="main-editprofile-container__table">
-                    <table>
-                        <tr>
-                            <th><label>名前</label></th>
-                            <td><input type="text" th:field="*{name}"></td>
-                        </tr>
-                        <tr>
-                            <th><label>ふりがな</label></th>
-                            <td><input type="text" th:field="*{furigana}"></td>
-                        </tr>
-                        <tr>
-                            <th><label>年齢</label></th>
-                            <td><input type="text" th:field="*{age}"></td>
-                        </tr>
-                        <tr>
-                            <th><label>出身</label></th>
-                            <td><input type="text" th:field="*{place}"></td>
-                        </tr>
-                        <tr>
-                            <th><label>出身校</label></th>
-                            <td><input type="text" th:field="*{school}"></td>
-                        </tr>
-                        <tr>
-                            <th><label>趣味</label></th>
-                            <td><input type="text" th:field="*{hobby}"></td>
-                        </tr>
-                        <tr>
-                            <th><label>一言</label></th>
-                            <td><textarea maxlength="100" type="text" th:field="*{comment}"></td>
+                    <div class="main-editprofile-container__imageupload">
+                        <input type="file" name="multipartFile" id="upload" />
+                    </div>
+
+                    <div class="main-editprofile-container__table">
+                        <table>
+                            <tr>
+                                <th><label>名前</label></th>
+                                <td><input type="text" th:field="*{name}"></td>
+                            </tr>
+                            <tr>
+                                <th><label>ふりがな</label></th>
+                                <td><input type="text" th:field="*{furigana}"></td>
+                            </tr>
+                            <tr>
+                                <th><label>年齢</label></th>
+                                <td><input type="text" th:field="*{age}"></td>
+                            </tr>
+                            <tr>
+                                <th><label>出身</label></th>
+                                <td><input type="text" th:field="*{place}"></td>
+                            </tr>
+                            <tr>
+                                <th><label>出身校</label></th>
+                                <td><input type="text" th:field="*{school}"></td>
+                            </tr>
+                            <tr>
+                                <th><label>趣味</label></th>
+                                <td><input type="text" th:field="*{hobby}"></td>
+                            </tr>
+                            <tr>
+                                <th><label>一言</label></th>
+                                <td><textarea maxlength="100" type="text" th:field="*{comment}"></td>
                         </tr>
                     </table>
                 </div>
             <div class="main-editprofile-container__button">
-                <input type="submit" value="保存">
                 <a th:href="|/profile/user/${id}|">キャンセル</a>
+                <input type="submit" value="保存">                
             </div>
             </form>
             </div>

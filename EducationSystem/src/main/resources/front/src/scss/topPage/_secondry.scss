@@ -1,15 +1,15 @@
 .secondry-wrapper {
     .secondry-container {
         &__navi {
-            background-color: rgba($color: #29292b, $alpha: 1);
-            height: 36px;
+            background-color: rgba($color:#20569e, $alpha: 1);
+            height: 40px;
             position: absolute;
             top: 0;
             width: 100%;
-            z-index: 1;
+            z-index: 10;
             &-ul {
                 position: absolute;
-                    right: 0;
+                    right: 35px;
                     top: 12px;
                 list-style: none;
                 a{                  

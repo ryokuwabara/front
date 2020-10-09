@@ -25,10 +25,12 @@ public class ProfileController {
     Integer userid = ac.getId();
     String name = ac.getProfile().getName();
     String role = ac.getRole();
+    String image = ac.getDetail().getProfileimage();
     model.addAttribute("role", role);
     model.addAttribute("id", userid);
     model.addAttribute("name", name);
     model.addAttribute("login", login);
+    model.addAttribute("image", image);
     model.addAttribute("title", "プロフィール");
     return "profile/user";
 

@@ -1,21 +1,21 @@
 main {
     .main-top-wrapper {
-        background-color: rgba($color: #d7d7e4, $alpha: 1.0);
+        background-color: rgba($color:#ffff, $alpha: 1.0);
         height: calc(100vh - 72px);
             // max-height: 800px;
             // min-height: 400px;
         position: absolute;
-            left: 240px;
+            left: 200px;
             top: 36px;
-        width: calc(100% - 240px);
+        width: calc(100% - 200px);
         z-index: 0;
     }
     .main-top-container {
-        background-color: rgba($color: #ffffff, $alpha: 1.0);
+        background-color: rgba($color:#fbf9f9, $alpha: 1.0);
         position: absolute;
             left: 50%;
             top: 50%;
-        width: 95%;
+        width: 97%;
         height: 95%;
         @include translate;
     }

@@ -1,50 +1,68 @@
 main {
-    .main-editprofile-wrapper {
-        background-color: rgba($color: #d7d7e4, $alpha: 1.0);
+     .main-editprofile-wrapper {
+        background-color: rgba($color: #fbf9f9, $alpha: 1);
         font-family: "Open Sans", sans-serif;
         height: calc(100vh - 72px);
         line-height: 1.25;
         position: absolute;
-            left: 240px;
-            top: 36px;
-        width: calc(100% - 240px);
+        left: 200px;
+        top: 36px;
+        width: calc(100% - 200px);
         z-index: 0;
         .main-editprofile-container {
-            background-color: rgba($color: #ffffff, $alpha: 1.0);
+            background-color: var(--white);
             position: absolute;
-                left: 50%;
-                top: 50%;
-            width: 95%;
+            left: 50%;
+            top: 50%;
+            width: 97%;
             height: 95%;
             @include translate;
-            &__table {
-                margin-top: 30px;
+            h2 {
+                width: 354px;
+                height: 47px;
+                background-color: #efe8e8;
+                font-family: Meiryo;
+                font-size: 32px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.5;
+                letter-spacing: normal;
+                text-align: left;
+                color: #615d5d;
+            }
+            &__profimage {
+                margin-top: 20px;
                 margin-left: 20px;
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                img {
+                    width: 80px;
+                    height: auto;
+                }
+            }
+            &__imageupload{
+                float: left;
+                margin-left: 10px;
+            }
+            &__table {
+                margin-top: 20px;
+                margin-left: 30px;
                 table {
-                    border-collapse: separate;
+                    border-spacing: 30px 20px;
                     table-layout: auto;
                     tr {
                         border-bottom: 2px solid #fff;
-                        th,td {
-                            border-right: 2px solid #fff;
-                            height: 25px;
-                        }
+                        
                         th {
-                            background-color: #a7c7e6;
-                            font-size: .85em;
+                            font-size: 0.85em;
                             width: 200px;
                         }
                         td {
-                            text-align: center;
-                            width: 310px;
-                            background-color: #e6f2f5;
-                            input {
-                                width: 300px;
-                            }
-                            textarea {
-                                resize: none;
-                                height: 80px;
-                                width: 301px;
+                            input{
+                            background-color: #ffffff;
+                            width: 300px;
                             }
                         }
                     }
@@ -53,19 +71,21 @@ main {
             &__button {
                 margin-top: 20px;
                 margin-left: 3%;
+                position: absolute;
+                left: 300px;
                 input {
                     text-align: center;
                     cursor: pointer;
                     line-height: 1em;
                     transition: .3s;
-                    background: rgba($color: #d7d7e4, $alpha: 1.0);
-                    color: black;
+                    background-color: #20569e;
+                    color: #ffff;
                     border: 1px solid rgba($color: #d7d7e4, $alpha: 1.0);
-                    padding: 5px 5px;
+                    padding: 6px 36px;
+                    border-radius: 20px;
                 }
                 input:hover {
-                    background: white;
-                    color: rgba($color: #d7d7e4, $alpha: 1.0);
+                    opacity: 0.5 ;
                 }
                 a {
                     margin-top: -20px;
@@ -74,13 +94,13 @@ main {
                     font-size: small;
                     border: 1px solid rgba($color: #d7d7e4, $alpha: 1.0);
                     text-decoration: none;
-                    background: rgba($color: #d7d7e4, $alpha: 1.0);
-                    color: black;
-                    padding: 1px 2px;
+                    background-color: #2ca9f9;
+                    color: #ffff;
+                    padding: 6px 36px;
+                    border-radius: 20px;
                 }
                 a:hover {
-                    background: white;
-                    color: rgba($color: #d7d7e4, $alpha: 1.0);
+                    opacity: 0.5 ;
                 }
             }
         }

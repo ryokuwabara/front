@@ -72,5 +72,5 @@ public class Profile {
     setEnter(enter);
     setUnit(unit);
     setSuperior(superior);
-  } 
+  }
 }

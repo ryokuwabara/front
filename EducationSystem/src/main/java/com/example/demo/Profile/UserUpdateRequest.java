@@ -1,5 +1,5 @@
+  
 package com.example.demo.Profile;
-
 
 import java.io.Serializable;
 
@@ -8,8 +8,8 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-//UserRequestを継承
-public class UserUpdateRequest implements Serializable{
+// UserRequestを継承
+public class UserUpdateRequest implements Serializable {
 
   /**
    *
