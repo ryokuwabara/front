@@ -18,5 +18,6 @@ main {
         width: 97%;
         height: 95%;
         @include translate;
+        overflow: auto;
     }
 }

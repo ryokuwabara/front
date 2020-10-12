@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/main.css}">
     <title>[[${title}]]</title>
 </head>
+
 <body>
     <!--primaryMenu-->
     <div th:insert="menu::primary-menu"></div>
@@ -28,12 +30,17 @@
                 <div class="main-editprofile-container__profimage">
                     <img th:src="|/img/profile/${image}|" />
                 </div>
-                <form th:action="@{/profile/update/{id}(id=*{id})}" th:object="${userUpdateRequest}" th:method="post" enctype="multipart/form-data">
+                <form th:action="@{/profile/update/{id}(id=*{id})}" th:object="${userUpdateRequest}" th:method="post"
+                    enctype="multipart/form-data">
                     <input type="hidden" th:field="*{id}" />
                     <input type="hidden" th:field="*{profileimage}" />
 
                     <div class="main-editprofile-container__imageupload">
-                        <input type="file" name="multipartFile" id="upload" />
+                        <label class="file">
+                            画像選択
+                            <input type="file" name="multipartFile" id="upload" />
+                        </label>
+
                     </div>
 
                     <div class="main-editprofile-container__table">
