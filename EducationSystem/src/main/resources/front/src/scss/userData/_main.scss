@@ -1,24 +1,36 @@
 main {
     .main-userData-wrapper {
-        background-color: rgba($color: #d7d7e4, $alpha: 1.0);
+        background-color: rgba($color: #fbf9f9, $alpha: 1);
         font-family: "Open Sans", sans-serif;
         height: calc(100vh - 72px);
-            // max-height: 800px;
-            // min-height: 400px;
         line-height: 1.25;
         position: absolute;
-            left: 240px;
-            top: 36px;
-        width: calc(100% - 240px);
+        left: 200px;
+        top: 36px;
+        width: calc(100% - 200px);
         z-index: 0;
         .main-userData-container {
-            background-color: rgba($color: #ffffff, $alpha: 1.0);
+            background-color: var(--white);
             position: absolute;
-                left: 50%;
-                top: 50%;
-            width: 95%;
+            left: 50%;
+            top: 50%;
+            width: 97%;
             height: 95%;
             @include translate;
+            h2{
+                width: 354px;
+                height: 47px;
+                background-color: #efe8e8;
+                font-family: Meiryo;
+                font-size: 32px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.5;
+                letter-spacing: normal;
+                text-align: left;
+                color: #615d5d;
+            }
             &__editButton {
                 position: absolute;
                     right: 30px;
@@ -29,35 +41,41 @@ main {
                     }
             }
             &__filter {
-                margin-top: 10px;
+                margin-top: 20px;
                 margin-left: 3%;
                 input {
                     width: 200px;
                 }
             }
             &__newdata {
-                margin-top: 10px;
-                margin-left: 2%;
+                position: absolute;
+                right: 20px;
+                top: 20px;
                 a {
-                    margin-top: -20px;
-                    margin-left: 50px;
-                    transition: .3s;
-                    font-size: small;
-                    border: 1px solid rgba($color: #d7d7e4, $alpha: 1.0);
+                    transition: 0.3s;
                     text-decoration: none;
-                    background: rgba($color: #d7d7e4, $alpha: 1.0);
+                    border-radius: 20px;
+                    background-color: #20569e;
                     color: black;
-                    padding: 1px 2px;
+                    padding: 6px 36px;
+                    font-family: Meiryo;
+                    font-size: medium;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.47;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #ffffff;
                 }
                 a:hover {
-                    background: white;
-                    color: rgba($color: #d7d7e4, $alpha: 1.0);
+                    opacity: 0.5 ;
                 }
             }
             &__table {
                 margin-top: 30px;
                 table {
-                    border-collapse: separate;
+                    border-spacing: 0px 10px;
                     margin: 0 auto;
                     padding: 0;
                     width: 90%;
@@ -75,7 +93,7 @@ main {
                             height: 50px;
                         }
                         td {
-                            background-color: #e6f2f5;
+                            background-color:#ffffff;
                             a {
                                 transition: .3s;
                                 font-size: small;

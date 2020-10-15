@@ -9,7 +9,6 @@ main {
         top: 36px;
         width: calc(100% - 200px);
         z-index: 0;
-        overflow: auto;
         .main-editprofile-container {
             background-color: var(--white);
             position: absolute;
@@ -18,7 +17,7 @@ main {
             width: 97%;
             height: 95%;
             @include translate;
-            h2 {
+            h2{
                 width: 354px;
                 height: 47px;
                 background-color: #efe8e8;

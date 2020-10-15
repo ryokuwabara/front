@@ -204,7 +204,18 @@ module.exports = {
             template: './src/main/resources/front/src/html/menu_origin.html',
             filename: '../templates/menu.html'
         }),
-
+        new HtmlWebpackPlugin({
+            template: './src/main/resources/front/src/html/news/list.html',
+            filename: '../templates/news/list.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/main/resources/front/src/html/news/add.html',
+            filename: '../templates/news/add.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/main/resources/front/src/html/news/edit.html',
+            filename: '../templates/news/edit.html'
+        }),
         new MiniCssExtractPlugin({
             filename: `css/[name].css`
         }),
