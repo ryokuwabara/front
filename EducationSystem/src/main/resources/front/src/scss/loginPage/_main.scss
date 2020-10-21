@@ -2,8 +2,7 @@ main {
     .main-container {
         &__loginform {
             background-color: rgba($color: #ffffff, $alpha: 0.6);
-            height: 640px;
-            margin-top: 22vh;
+            height: 100vh;
             position: absolute;
             left: 50%;
             top: 50vh;

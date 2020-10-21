@@ -1,0 +1,95 @@
+main {
+    .main-profile-wrapper {
+        background-color: rgba($color: #fbf9f9, $alpha: 1);
+        font-family: "Open Sans", sans-serif;
+        height: calc(100vh - 72px);
+        line-height: 1.25;
+        position: absolute;
+        left: 200px;
+        top: 36px;
+        width: calc(100% - 200px);
+        z-index: 0;
+        .main-profile-container {
+            background-color: var(--white);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 97%;
+            height: 95%;
+            @include translate;
+            h2 {
+                width: 354px;
+                height: 47px;
+                background-color: #efe8e8;
+                font-family: Meiryo;
+                font-size: 32px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.5;
+                letter-spacing: normal;
+                text-align: left;
+                color: #615d5d;
+            }
+            &__profimage {
+                margin-top: 20px;
+                margin-left: 20px;
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+                float: left;
+                img {
+                    width: 80px;
+                    height: auto;
+                }
+            }
+            &__table {
+                margin-top: 20px;
+                margin-left: 40px;
+                table {
+                    border-spacing: 30px 20px;
+                    table-layout: auto;
+                    tr {
+                        border-bottom: 2px solid #fff;
+                        
+                        th {
+                            font-size: 0.85em;
+                            width: 200px;
+                        }
+                        td {
+                            background-color: #ffffff;
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+            &__link {
+                position: absolute;
+                    right: 20px;
+                    top: 20px;
+
+                a {
+                    transition: 0.3s;
+                    text-decoration: none;
+                    border-radius: 20px;
+                    background-color: #20569e;
+                    color: black;
+                    padding: 6px 36px;
+                    font-family: Meiryo;
+                    font-size: medium;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.47;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #ffffff;
+                }
+                a:hover {
+                    opacity: 0.5 ;
+                    
+                }
+            }
+        }
+    }
+}

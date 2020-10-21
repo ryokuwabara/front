@@ -20,8 +20,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "dev": "SET NODE_ENV=development&&webpack-dev-server",
-    "build": "SET NODE_ENV=production&&webpack"
+    "dev": "NODE_ENV=development&&webpack-dev-server",
+    "build": "NODE_ENV=production&&webpack"
   },
   "dependencies": {
     "autoprefixer": "^10.0.1",

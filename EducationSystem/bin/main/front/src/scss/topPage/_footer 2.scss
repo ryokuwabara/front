@@ -1,0 +1,17 @@
+footer {
+    .footer-top-wrapper {
+        background-color: rgba($color: #20569e ,$alpha: 1.0);
+        color: rgba($color: #ffffff, $alpha: 1.0);
+        height: 36px;
+        position: fixed;
+            bottom: 0;
+        width: 100%;
+        z-index: 100;
+        p {
+            position: absolute;
+                left: 50%;
+                top: 50%;
+            @include translate;
+        }
+    }
+}
